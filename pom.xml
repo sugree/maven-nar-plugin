@@ -35,18 +35,15 @@
   </description>
   <url>http://duns.github.com/maven-nar-plugin/</url>
 
-  <!-- deploy to duns' github repository -->
+  <!-- deploy to local repository -->
   <distributionManagement>
     <repository>
-      <id>duns-maven-releases</id>
-      <name>Duns' Maven Releases</name>
-        <url>file:///Users/duns/sonatype/git/maven-releases</url>
-      </repository>
+      <id>plugins-release.vm0</id>
+      <url>http://vm0.inox.co.th/artifactory/plugins-release-local</url>
+    </repository>
     <snapshotRepository>
-      <uniqueVersion>false</uniqueVersion>
-      <id>duns-maven-snapshots</id>
-      <name>Duns' Maven Snapshots</name>
-      <url>file:///Users/duns/sonatype/git/maven-snapshots</url>
+      <id>plugins-snapshot.vm0</id>
+      <url>http://vm0.inox.co.th/artifactory/plugins-snapshot-local</url>
     </snapshotRepository>
   <!-- temporarily until we have a fixed site -->
     <site>
@@ -60,14 +57,24 @@
   </prerequisites>
 
   <scm>
-    <connection>scm:git:git://github.com/duns/maven-nar-plugin.git</connection>
-    <developerConnection>scm:git:git://github.com/duns/maven-nar-plugin.git</developerConnection>
-    <url>http://github.com/duns/maven-nar-plugin</url>
+    <connection>scm:git:git://github.com/sugree/maven-nar-plugin.git</connection>
+    <developerConnection>scm:git:git://github.com/sugree/maven-nar-plugin.git</developerConnection>
+    <url>http://github.com/sugree/maven-nar-plugin</url>
   </scm>
   <issueManagement>
     <system>jira</system>
     <url>http://issues.sonatype.org/browse/NAR</url>
   </issueManagement>
+
+  <repositories>
+    <repository>
+      <id>duns-snapshots</id>
+      <url>http://duns.github.com/maven-snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <properties>
     <mavenVersion>2.0.9</mavenVersion>
